@@ -1,0 +1,7 @@
+services:
+
+    tm:
+        image: threemonkeys:1
+        container_name: threemonkeys
+        ports:
+            - 80:8080

@@ -11,5 +11,6 @@ RUN mkdir threemonkeys
 
 COPY index.htm threemonkeys/index.htm
 COPY hiddenfields.jsp threemonkeys/hiddenfields.jsp
+ADD server.xml /usr/local/tomcat/conf/server.xml
 
 RUN rm -rf /usr/local/tomcat/webapps/ROOT*

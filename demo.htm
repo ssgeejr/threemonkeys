@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Autofill Demonstration</title>
+    <script>
+        // Function to simulate autofill and expose data that can be collected
+        function simulateAutofill() {
+            const fname = document.getElementById('fname').value;
+            // Simulate data filling based on the first name, for demonstration
+            document.getElementById('street').value = "123 Example St";
+            document.getElementById('city').value = "Anytown";
+            document.getElementById('state').value = "Anystate";
+            document.getElementById('zipcode').value = "12345";
+
+            // Display the hidden fields to show what data can be autofilled
+            document.getElementById('addressFields').style.display = 'block';
+        }
+    </script>
+</head>
+<body>
+    <h1>Autofill Risk Demonstration</h1>
+    <p>Type your first name and watch how other fields can be automatically filled by browsers.</p>
+    <form action="#" method="post">
+        <label for="fname">First Name:</label>
+        <input type="text" id="fname" name="fname" oninput="simulateAutofill()"><br><br>
+
+        <div id="addressFields" style="display:none;">
+            <label for="street">Street:</label>
+            <input type="text" id="street" name="street" disabled><br><br>
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city" disabled><br><br>
+            <label for="state">State:</label>
+            <input type="text" id="state" name="state" disabled><br><br>
+            <label for="zipcode">Zip Code:</label>
+            <input type="text" id="zipcode" name="zipcode" disabled><br><br>
+        </div>
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
